@@ -1,3 +1,4 @@
+
 from socket import *
 
 
@@ -36,14 +37,14 @@ def smtp_client(port=1025, mailserver='127.0.0.1'):
 
     # Send RCPT TO command and handle server response.
     # Fill in start
-    mailDest = 'RCPT TO: <<EMAIL>>\r\n'
+    mailDest = 'MAIL TO: <<EMAIL>>\r\n'
     clientSocket.send(mailDest.encode())
     recv3 = clientSocket.recv(1024).decode()
     # Fill in end
 
     # Send DATA command and handle server response.
     # Fill in start
-    dataSent = 'DATA\r\n'
+    dataSent = 'DATA SENT\r\n'
     clientSocket.send(dataSent.encode())
     recv4 = clientSocket.recv(1024).decode()
     # Fill in end
